@@ -1,0 +1,128 @@
+Program 1 create,add and commit:
+-git init
+-vim file.txt
+-git add .
+-git commit -m "Initial commit with file added"
+-----------------------------------------------------------------------------------------------
+Program 2 Merging branches in git:
+-git init
+-git checkout -b feature-branch
+-vim file1.txt
+-git add .
+-git commit -m "First commit on feature-branch"
+-vim file2.txt
+-git add .
+-git commit -m "Second commit on feature-branch"
+-git checkout master
+-git merge feature-branch
+-----------------------------------------------------------------------------------------------
+Program 3 Stashing changes in git:
+-git init
+-git checkout -b feature-branch
+-vim file.txt
+-git add file.txt
+-git stash save "message"
+-git checkout master
+-git stash list
+-git stash apply stash@{0}
+-----------------------------------------------------------------------------------------------
+Program 4 Cloning a git repository:
+-git init
+-git clone your-remote-repo-url
+-cd repo-directory
+-vim file.txt
+-git add .
+-git commit -m "First commit after cloning repo"
+-git push origin main
+-----------------------------------------------------------------------------------------------
+Program 5 rebase and pushing to remote repository:
+-git init
+-git checkout -b main
+-vim file1.txt
+-git add .
+-git commit -m "First commit on main branch"
+-vim file2.txt
+-git add .
+-git commit -m "Second commit on main branch"
+-vim file3.txt
+-git add .
+-git commit -m "Third commit on main branch"
+-git remote add origin your-remote-repo-url
+-git fetch origin
+-git rebase origin/main
+-git push origin main
+-----------------------------------------------------------------------------------------------
+Program 6 commit message for merge with remote repository:
+-git init
+-git checkout -b feature-branch
+-vim feature.txt
+-git add .
+-git commit -m "First commit in feature-branch"
+-vim feature.txt
+-git add .
+-git commit -m "Second commit in feature-branch"
+-git remote add origin your-remote-repo-url
+-git fetch origin
+-git rebase origin/main
+-git checkout main
+-vim main.txt
+-git add .
+-git commit -m "Commit on main branch"
+-git merge feature-branch -m "Merge feature-branch into main with custom message"
+-----------------------------------------------------------------------------------------------
+Program 7 Git Tags:
+-git tag v1.0 <commit-id> 
+-----------------------------------------------------------------------------------------------
+Program 8 Git cherry pick:
+-git init
+-vim main.c
+-git add main.c
+-git commit -m "Program 8 commits"
+-git checkout -b feature-branch
+-vim test.c
+-git add test.c
+-git commit -m "first Commit in feature branch"
+-vim test.c
+-git add test.c
+-git commit -m "second Commit in feature branch"
+-vim test.c
+-git add test.c
+-git commit -m "third Commit in feature branch"
+-git log --oneline
+-git checkout main
+-git cherry-pick <commit-id-of-first-commit-in-feature-branch>^..<commit-id-of-third-commit-in-feature-branch>
+-git commit --alow-empty -m "cherry pick commits"
+-git reflog
+-----------------------------------------------------------------------------------------------
+Program 9 Git Show and Git log -n 1:
+-git init
+-vim main.c
+-git add main.c
+-git commit -m "Program 9 commits"
+-git log --oneline
+-git show <commit-id>
+-git log -n 1 <commit-id>
+-----------------------------------------------------------------------------------------------
+Program 10 Git author name , dates:
+-git init
+-git show
+-git log --author="Name" --since="2024-12-25" --until="2025-01-11"
+-----------------------------------------------------------------------------------------------
+Program 11 Easy Peasy Git log -n 5:
+-git init
+-vim main.c
+-git add main.c
+-git commit -m "Program 11 commits"
+-vim main.c
+-git add main.c
+-git commit -m "Program 11 commits 2"
+-git log -n 2
+-----------------------------------------------------------------------------------------------
+Program 12 Git revert:
+-git init
+-vim main.c
+-git add main.c
+-git commit -m "Program 12 commits"
+-git log --oneline
+-git revert <commit-id>
+
